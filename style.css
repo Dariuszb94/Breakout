@@ -1,1 +1,8 @@
-canvas { background: #eee; }
+canvas { background: #eee;
+border: 2px solid gray;
+-webkit-box-shadow: 10px 13px 31px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 13px 31px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 13px 31px 0px rgba(0,0,0,0.75); }
+body{
+	background-color: #fae4e1;
+}
