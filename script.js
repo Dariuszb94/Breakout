@@ -1,3 +1,4 @@
+
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 let ballRadius = 10;
@@ -20,6 +21,38 @@ let brickOffsetLeft = 30;
 let score = 0;
 let lives = 5;
 
+
+
+$(document).ready(function(){
+  $("#rightHandler").click(function(){
+    rightPressed = !rightPressed ;
+    setTimeout(rightHandlerDown,100);
+  });
+
+  $("#leftHandler").click(function(){
+    leftPressed = !leftPressed ;
+    setTimeout(leftHandlerDown,100);
+  });
+
+
+
+
+
+
+
+});
+
+
+
+function rightHandlerDown (){
+  rightPressed = !rightPressed ;
+}
+
+function leftHandlerDown (){
+  leftPressed = !leftPressed ;
+}
+
+
 let bricks = [];
 for(let c=0; c<brickColumnCount; c++) {
   bricks[c] = [];
@@ -32,8 +65,9 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
+
 function keyDownHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
+    if(e.key == "Right" || e.key == "ArrowRight" ) {
         rightPressed = true;
     }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
