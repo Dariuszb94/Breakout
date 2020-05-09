@@ -1,4 +1,3 @@
-
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 let ballRadius = 10;
@@ -21,8 +20,6 @@ let brickOffsetLeft = 30;
 let score = 0;
 let lives = 5;
 
-
-
 $(document).ready(function(){
   $("#rightHandler").click(function(){
     rightPressed = !rightPressed ;
@@ -33,15 +30,7 @@ $(document).ready(function(){
     leftPressed = !leftPressed ;
     setTimeout(leftHandlerDown,100);
   });
-
-
-
-
-
-
-
 });
-
 
 
 function rightHandlerDown (){
@@ -51,7 +40,6 @@ function rightHandlerDown (){
 function leftHandlerDown (){
   leftPressed = !leftPressed ;
 }
-
 
 let bricks = [];
 for(let c=0; c<brickColumnCount; c++) {
@@ -90,6 +78,7 @@ function mouseMoveHandler(e) {
     paddleX = relativeX - paddleWidth/2;
   }
 }
+
 function collisionDetection() {
   for(let c=0; c<brickColumnCount; c++) {
     for(let r=0; r<brickRowCount; r++) {
@@ -116,6 +105,7 @@ function drawBall() {
   ctx.fill();
   ctx.closePath();
 }
+
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
@@ -123,6 +113,7 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
+
 function drawBricks() {
   for(let c=0; c<brickColumnCount; c++) {
     for(let r=0; r<brickRowCount; r++) {
@@ -136,19 +127,20 @@ function drawBricks() {
         let my_gradient = ctx.createLinearGradient(0, 0, 0, 170);
 my_gradient.addColorStop(0, "black");
 my_gradient.addColorStop(1, "white");
-ctx.fillStyle = my_gradient;
-       
+ctx.fillStyle = my_gradient;   
         ctx.fill();
         ctx.closePath();
       }
     }
   }
 }
+
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "green";
   ctx.fillText("Score: "+score, 8, 20);
 }
+
 function drawLives() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "red";
