@@ -11,5 +11,6 @@ In breakout game you have to destroy floating rectangles with ball, if ball fall
 You can steer bar with mouse or buttons. Game over is communicated when you lose
 Project is created with:
 * jQuery version: 3.4.1
+* Bootsrap version: 4.4.1
 ## Setup
 To run this project, download a repo, then go to repo folder, open index.html
